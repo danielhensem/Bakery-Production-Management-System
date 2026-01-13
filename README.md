@@ -199,6 +199,47 @@ define('DB_PASS', '');            // Your MySQL password
 define('DB_NAME', 'survey_db');   // Database name
 ```
 
+### Step 6: Git Setup (Optional)
+
+If you want to version control your project with Git:
+
+1. **Initialize Git repository**:
+   ```bash
+   git init
+   ```
+
+2. **Add all files to staging**:
+   ```bash
+   git add .
+   ```
+
+3. **Create initial commit**:
+   ```bash
+   git commit -m "Initial commit: Bakery Production Management System"
+   ```
+
+4. **Set main branch** (if not already set):
+   ```bash
+   git branch -M main
+   ```
+
+5. **Add remote repository**:
+   ```bash
+   git remote add origin https://github.com/danielhensem/Bakery-Production-Management-System.git
+   ```
+
+6. **Push to GitHub**:
+   ```bash
+   git push -u origin main
+   ```
+
+**Note**: Make sure you've created the repository on GitHub first. If you need to push to a different branch name, use:
+```bash
+git push -u origin main
+```
+
+**Important**: The `.gitignore` file is already configured to exclude sensitive files like `vendor/`, logs, and temporary files. Never commit database credentials or sensitive configuration files.
+
 ## 🗄 Database Setup
 
 The system uses the following main database tables:
@@ -583,10 +624,8 @@ The system tracks:
 
 **Version**: 1.0  
 **Last Updated**: January 2025  
-**Maintained By**: Development Team
+**Maintained By**: Daniel
 
 ---
 
 *For detailed technical documentation, please refer to the inline code comments and database schema.*
-#   B a k e r y - P r o d u c t i o n - M a n a g e m e n t - S y s t e m  
- 

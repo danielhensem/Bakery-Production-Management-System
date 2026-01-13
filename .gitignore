@@ -1,0 +1,57 @@
+# Dependencies
+/vendor/
+composer.phar
+composer.lock
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment and configuration files
+.env
+.env.local
+.env.*.local
+config.local.php
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Cache
+cache/
+*.cache
+
+# Session files
+sessions/
+
+# Uploaded files (if you want to exclude user uploads)
+# uploads/
+
+# Database backups
+*.sql
+*.sql.gz
+*.sql.bz2
+!database/survey_db.sql
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# PHP specific
+*.php~
+*.php.bak

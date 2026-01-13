@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2025 at 11:55 AM
+-- Generation Time: Jan 17, 2025 at 09:18 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -64,9 +64,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`order_id`, `id`, `product_id`, `recipe_name`, `qty_product`, `staff_id`, `created_at`, `starteddate`, `enddate`, `hours`, `status`, `quality_test`, `comment`, `ingredients_data`) VALUES
-(11, 205, 104, 'White bread', 2147483647, '100005', '2025-01-12 20:12:19', '2025-01-13', '2025-01-31', 2, 'Unfinished', 'Good', '', '[{\"ingredient\":\"Flour (kg)\",\"mass\":\"8.9318888888889E+44\",\"unit\":\"\"},{\"ingredient\":\"Egg (U)\",\"mass\":\"2.6795666666667E+44\",\"unit\":\"\"}]'),
-(0, 206, 103, 'Fix Croissant', 11, '100002', '2025-01-12 20:26:10', '2025-01-13', '2025-01-14', 0, 'Unfinished', '', '', '[\"Flour - 5.5 kg\",\"Egg - 22 unit\"]'),
-(19, 208, 104, 'roti bakor', 2147483647, '100001', '2025-01-13 09:53:30', '2025-01-13', '2025-01-14', 1, 'Unfinished', '', '', '[]');
+(11, 228, 101, 'cake coklat', 10, '100004', '2025-01-14 01:03:22', '2025-01-14', '2025-01-15', 1, 'Finished', '', '', '[\"flour - 20 kg\",\"123 - 12 kg\",\"DROP TABLE_RECIPE - 34 kg\"]'),
+(12, 230, 103, 'Almond Butter Croissant', 10, '100003', '2025-01-17 07:28:35', '2025-01-17', '2025-01-18', 2, 'Finished', 'Good', 'All 10 croissant bake with good condition', '[\"homemade croissants - 20 kg\",\"Almond butter - 20 kg\",\"Sliced almonds - 10 kg\",\"Powdered sugar - 40 kg\"]');
 
 -- --------------------------------------------------------
 
@@ -109,39 +108,39 @@ CREATE TABLE `equipment_details` (
 --
 
 INSERT INTO `equipment_details` (`spec_id`, `eq_id`, `eq_description`, `qty`, `eq_used`, `eq_not_used`) VALUES
-('B105', 'E102', 'Proofing Baskets', 35, 0, 0),
-('B106', 'E103', 'Loaf Pans', 30, 0, 0),
-('B107', 'E103', 'Baguette Trays', 50, 0, 0),
-('B108', 'E103', 'Cooling Racks', 20, 6, 14),
-('C105', 'E102', 'Palette Knives', 10, 0, 0),
-('C106', 'E102', 'Cake Leveler', 4, 0, 0),
-('C107', 'E102', 'Turntable for Decorating', 5, 0, 0),
-('C108', 'E102', 'Decorating Nozzles and Bags', 6, 0, 0),
-('C109', 'E103', 'Cake Tins (Round, Square, Rectangular)', 10, 0, 0),
-('C110', 'E103', 'Springform Pans', 10, 0, 0),
-('CR105', 'E102', 'Rolling Pins', 5, 0, 0),
-('CR106', 'E102', 'Bench Scrapers', 5, 0, 0),
-('CR107', 'E102', 'Dough Cutters', 3, 0, 0),
-('CR108', 'E103', 'Baking Sheets', 20, 0, 0),
-('M105', 'E103', 'Muffin Trays', 50, 0, 0),
-('M106', 'E103', 'Silicone Muffin Cups', 300, 0, 0),
-('M107', 'E103', 'Cooling Racks', 5, 0, 0),
+('B105', 'E102', 'Proofing Baskets', 35, 0, 35),
+('B106', 'E103', 'Loaf Pans', 30, 0, 30),
+('B107', 'E103', 'Baguette Trays', 50, 0, 50),
+('B108', 'E103', 'Cooling Racks', 20, 0, 20),
+('C105', 'E102', 'Palette Knives', 10, 0, 10),
+('C106', 'E102', 'Cake Leveler', 4, 0, 4),
+('C107', 'E102', 'Turntable for Decorating', 5, 0, 5),
+('C108', 'E102', 'Decorating Nozzles and Bags', 6, 0, 6),
+('C109', 'E103', 'Cake Tins (Round, Square, Rectangular)', 10, 0, 10),
+('C110', 'E103', 'Springform Pans', 10, 0, 10),
+('CR105', 'E102', 'Rolling Pins', 5, 0, 5),
+('CR106', 'E102', 'Bench Scrapers', 5, 0, 5),
+('CR107', 'E102', 'Dough Cutters', 3, 0, 3),
+('CR108', 'E103', 'Baking Sheets', 20, 0, 20),
+('M105', 'E103', 'Muffin Trays', 50, 0, 50),
+('M106', 'E103', 'Silicone Muffin Cups', 300, 0, 300),
+('M107', 'E103', 'Cooling Racks', 5, 0, 5),
 ('P103', 'E102', 'Pizza Peel', 2, 0, 2),
 ('P104', 'E102', 'Pizza Cutter', 3, 0, 3),
 ('P105', 'E102', 'Dough Dockers', 3, 0, 3),
-('P106', 'E103', 'Pizza Pans', 5, 0, 0),
-('P107', 'E103', 'Pizza Stones', 5, 0, 0),
-('PA105', 'E102', 'Pasta Rolling Pin', 2, 0, 0),
-('PA106', 'E102', 'Ravioli Cutter', 2, 0, 0),
-('PA107', 'E101', 'Pasta Extruder Machine', 1, 0, 0),
-('PA108', 'E101', 'Pasta Cutter', 1, 0, 0),
-('SH105', 'E101', 'Planetary Mixer', 3, 0, 0),
-('SH106', 'E101', 'Dough Sheeter', 1, 1, 0),
-('SH107', 'E101', 'Proofer Cabinet', 2, 0, 0),
-('SH108', 'E101', 'Bread Slicer', 1, 0, 0),
-('SH109', 'E101', 'Convection Oven (Big Size)', 3, 0, 0),
-('SH110', 'E101', 'Refrigerator/Chiller', 2, 0, 0),
-('SH111', 'E101', 'Blast Freezer', 3, 0, 0);
+('P106', 'E103', 'Pizza Pans', 5, 0, 5),
+('P107', 'E103', 'Pizza Stones', 5, 0, 5),
+('PA105', 'E102', 'Pasta Rolling Pin', 2, 0, 2),
+('PA106', 'E102', 'Ravioli Cutter', 2, 0, 2),
+('PA107', 'E101', 'Pasta Extruder Machine', 1, 0, 1),
+('PA108', 'E101', 'Pasta Cutter', 1, 0, 1),
+('SH105', 'E101', 'Planetary Mixer', 3, 0, 3),
+('SH106', 'E101', 'Dough Sheeter', 1, 0, 1),
+('SH107', 'E101', 'Proofer Cabinet', 2, 0, 2),
+('SH108', 'E101', 'Bread Slicer', 1, 0, 1),
+('SH109', 'E101', 'Convection Oven (Big Size)', 3, 0, 3),
+('SH110', 'E101', 'Refrigerator/Chiller', 2, 0, 2),
+('SH111', 'E101', 'Blast Freezer', 3, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -175,15 +174,6 @@ CREATE TABLE `equipment_record` (
   `eq_used` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `equipment_record`
---
-
-INSERT INTO `equipment_record` (`id`, `spec_id`, `eq_used`) VALUES
-(205, 'B108', 3),
-(205, 'SH106', 1),
-(206, 'B108', 3);
-
 -- --------------------------------------------------------
 
 --
@@ -194,28 +184,46 @@ CREATE TABLE `ing_list` (
   `recipe_id` int(11) NOT NULL,
   `ing_type` text NOT NULL,
   `ing_mass` double NOT NULL,
-  `Unit` text NOT NULL
+  `Unit` text NOT NULL,
+  `qty` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `ing_list`
 --
 
-INSERT INTO `ing_list` (`recipe_id`, `ing_type`, `ing_mass`, `Unit`) VALUES
-(2, 'roti', 10, ''),
-(1, 'Flour (kg)', 10, ''),
-(1, 'Egg (U)', 3, ''),
-(4, 'Flour (kg)', 15, ''),
-(4, 'Egg (U)', 10, ''),
-(4, 'Butter (kg)', 2, ''),
-(3, 'flour', 10, 'kg'),
-(8, 'Flour', 10, 'kg'),
-(8, 'Egg', 5, 'unit'),
-(9, 'Flour', 10, 'kg'),
-(9, 'Egg', 5, 'unit'),
-(10, 'Flour', 5, 'kg'),
-(10, 'Egg', 20, 'unit'),
-(12, 'sugar', 10, 'g');
+INSERT INTO `ing_list` (`recipe_id`, `ing_type`, `ing_mass`, `Unit`, `qty`) VALUES
+(10, 'Flour', 5, 'kg', 5),
+(10, 'Egg', 20, 'unit', 5),
+(13, 'flour', 5, 'kg', 5),
+(14, 'homemade croissants', 10, 'kg', 5),
+(14, 'Almond butter', 10, 'kg', 5),
+(14, 'Sliced almonds', 5, 'kg', 5),
+(14, 'Powdered sugar', 20, 'kg', 5),
+(15, 'pizza douh', 5, 'kg', 10),
+(15, 'tomato sauce', 3, 'kg', 10),
+(15, 'fresh mozarella', 5, 'kg', 10),
+(15, 'basil leaves', 1, 'kg', 10),
+(16, 'Red velvet cake layers', 20, 'unit', 10),
+(16, 'Cheesecake layer', 20, 'unit', 10),
+(16, 'Cream cheese frosting', 1, 'kg', 10),
+(17, 'flour', 5, 'kg', 10),
+(17, 'sugar', 1, 'kg', 10),
+(17, 'eggs', 5, 'unit', 10),
+(18, 'bread flour', 5, 'kg', 10),
+(18, 'yeast', 1, 'kg', 10),
+(18, 'milk', 3, 'kg', 10),
+(18, 'eggs', 10, 'unit', 10),
+(19, 'bananas', 20, 'unit', 10),
+(19, 'sugar', 5, 'kg', 10),
+(19, 'chocolate chips', 1, 'kg', 10),
+(19, 'egg', 10, 'unit', 10),
+(20, 'pizza dough', 10, 'unit', 10),
+(20, 'bbq sauce', 2, 'kg', 10),
+(20, 'cooked chicken', 1, 'kg', 10),
+(20, 'mozarella', 2, 'kg', 10),
+(9, 'Flour', 5, 'kg', 10),
+(9, 'Egg', 30, 'unit', 10);
 
 -- --------------------------------------------------------
 
@@ -284,16 +292,11 @@ CREATE TABLE `order_customer` (
 --
 
 INSERT INTO `order_customer` (`order_id`, `recipe_name`, `customer_name`, `quantity`, `order_date`, `status`) VALUES
-(11, 'Strawberry Cake', 'Pn. Halijah', 5, '2025-01-15', 'Ordered'),
-(12, 'Chocolate Croissant', 'En. Amin', 10, '2025-01-17', 'Unfinished'),
-(13, 'Whole Wheat Bread', 'James Wong', 3, '2025-01-20', 'Unfinished'),
+(11, 'Strawberry Cake', 'Pn. Halijah', 5, '2025-01-15', 'Finished'),
+(12, 'Chocolate Croissant', 'En. Amin', 10, '2025-01-17', 'Finished'),
+(13, 'Whole Wheat Bread', 'James Wong', 3, '2025-01-20', 'Ordered'),
 (14, 'Margherita Pizza', 'En. Bajuri', 8, '2025-01-22', 'Ordered'),
-(15, 'Red Velvet Cake', 'En. Windara', 7, '2025-01-25', 'Ordered'),
-(16, 'Almond Croissant', 'En. Gentar', 12, '2025-01-28', 'Ordered'),
-(17, 'Sourdough Bread', 'En. Saad', 6, '2025-02-01', 'Ordered'),
-(18, 'Pepperoni Pizza', 'Pn. Saodah', 4, '2025-02-04', 'Ordered'),
-(19, 'Carrot Cake', 'En. Amin ', 9, '2025-02-07', 'Ordered'),
-(20, 'Pesto Croissant', 'En. Amirul', 11, '2025-02-10', 'Ordered');
+(15, 'Red Velvet Cake', 'En. Windara', 7, '2025-01-25', 'Ordered');
 
 -- --------------------------------------------------------
 
@@ -385,14 +388,16 @@ CREATE TABLE `receipe` (
 --
 
 INSERT INTO `receipe` (`recipe_id`, `recipe_name`, `recipe_step`, `equipment`, `product_id`) VALUES
-(1, 'White bread', 'Bake on the oven for 14 minutes', 'E102', 104),
-(2, 'roti bakor', 'bakor\nbakor', 'E101', 104),
-(3, 'Fruit Croissant', 'Bake in the oven for 13 minutes', 'E102', 103),
-(4, 'Classic Muffin', 'Bake muffin for 15 minutes', 'E101', 102),
-(8, 'Garlic Bread', 'Bake for 15 minutes', '[{\"specId\":', 104),
-(9, 'roti bakor', 'wejoiq', '[{\"specId\":', 103),
+(9, 'cake coklat', 'Bake for 15 minutes', '[{\"specId\":', 101),
 (10, 'Fix Croissant', '1. Bake for 13 minutes', '[{\"specId\":', 103),
-(12, 'Orange Juice', 'Shake for 15 minutes', '[{\"specId\":', 105);
+(13, 'Strawberry Cake', 'Bake for 13 minutes', '[{\"specId\":', 101),
+(14, 'Almond Butter Croissant', '1. Preheat your oven to 180°C (350°F).\n2. Slice the croissants in half horizontally.\n3. Spread a generous layer of almond butter inside each croissant.\n4. Close the croissants and place them on a baking sheet.\n5. Top with sliced almonds.\n6. Bake for 5-7 minutes, until warm and lightly golden.\n7. Dust with powdered sugar before serving.', '[{\"specId\":', 103),
+(15, 'Margherita Pizza', 'Bake for 7-10 minutes', '[{\"specId\":', 107),
+(16, ' Red Velvet Cheesecake', 'bake and cool completely', '[{\"specId\":', 101),
+(17, 'Blueberry Lemon Muffin', 'Bake for 18-20 minutes', '[{\"specId\":', 102),
+(18, 'Chocolate Chip Brioche', 'Bake for 20-25 minutes, or until golden brown and cooked through.', '[{\"specId\":', 104),
+(19, ' Double Chocolate Banana Muffin', 'Bake for 18-22 minutes,', '[{\"specId\":', 102),
+(20, 'BBQ Chicken Pizza', 'BBQ Chicken Pizza', '[{\"specId\":', 107);
 
 -- --------------------------------------------------------
 
@@ -412,14 +417,41 @@ CREATE TABLE `recipe_equipment` (
 --
 
 INSERT INTO `recipe_equipment` (`recipe_id`, `spec_id`, `eq_description`, `eq_used`) VALUES
-(8, '0', '\n                                                B105 - Proofing Baskets                                            ', 0),
-(8, '0', '\n                                                B107 - Baguette Trays                                            ', 0),
-(7, 'P107', 'P107 - Pizza Stones', 0),
-(9, 'B108', 'B108 - Cooling Racks', 0),
-(9, 'CR107', 'CR107 - Dough Cutters', 0),
 (10, 'B108', 'B108 - Cooling Racks', 161),
 (10, 'SH106', 'SH106 - Dough Sheeter', 151),
-(12, 'B106', 'B106 - Loaf Pans', 0);
+(13, 'C107', 'C107 - Turntable for Decorating', NULL),
+(14, 'CR105', 'CR105 - Rolling Pins', NULL),
+(14, 'CR106', 'CR106 - Bench Scrapers', NULL),
+(14, 'CR107', 'CR107 - Dough Cutters', NULL),
+(14, 'CR108', 'CR108 - Baking Sheets', NULL),
+(15, 'P103', 'P103 - Pizza Peel', NULL),
+(15, 'P104', 'P104 - Pizza Cutter', NULL),
+(15, 'P105', 'P105 - Dough Dockers', NULL),
+(15, 'P106', 'P106 - Pizza Pans', NULL),
+(15, 'P107', 'P107 - Pizza Stones', NULL),
+(16, 'C105', 'C105 - Palette Knives', NULL),
+(16, 'C106', 'C106 - Cake Leveler', NULL),
+(16, 'C107', 'C107 - Turntable for Decorating', NULL),
+(16, 'C108', 'C108 - Decorating Nozzles and Bags', NULL),
+(16, 'C109', 'C109 - Cake Tins (Round, Square, Rectangular)', NULL),
+(16, 'C110', 'C110 - Springform Pans', NULL),
+(17, 'M105', 'M105 - Muffin Trays', NULL),
+(17, 'M106', 'M106 - Silicone Muffin Cups', NULL),
+(17, 'M107', 'M107 - Cooling Racks', NULL),
+(18, 'B105', 'B105 - Proofing Baskets', NULL),
+(18, 'B106', 'B106 - Loaf Pans', NULL),
+(18, 'B107', 'B107 - Baguette Trays', NULL),
+(18, 'B108', 'B108 - Cooling Racks', NULL),
+(19, 'M105', 'M105 - Muffin Trays', NULL),
+(19, 'M106', 'M106 - Silicone Muffin Cups', NULL),
+(19, 'M107', 'M107 - Cooling Racks', NULL),
+(20, 'P103', 'P103 - Pizza Peel', NULL),
+(20, 'P104', 'P104 - Pizza Cutter', NULL),
+(20, 'P105', 'P105 - Dough Dockers', NULL),
+(20, 'P106', 'P106 - Pizza Pans', NULL),
+(20, 'P107', 'P107 - Pizza Stones', NULL),
+(9, 'C106', 'C106 - Cake Leveler', NULL),
+(9, 'C105', 'C105 - Palette Knives', NULL);
 
 -- --------------------------------------------------------
 
@@ -482,8 +514,6 @@ INSERT INTO `typeproduct` (`product_id`, `product_name`) VALUES
 (102, 'Muffin'),
 (103, 'Croissant'),
 (104, 'Bread'),
-(105, 'Juice'),
-(106, 'Drinking Water'),
 (107, 'Pizza'),
 (108, 'pasta');
 
@@ -511,11 +541,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `fullname`, `contact`, `address`, `email`, `password`, `type`, `date_created`, `staff_id`) VALUES
 (1, 'Administrator', '+123456789', 'Sample address', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', 1, '2020-11-10 08:43:06', 0),
-(80, 'Halim', '', '', 'baker1@gmail.com', '$2y$10$SyTCddh7Zm5l0G493nWDreqD3CIOBjH/9dM8b/c6Am6g0YLJyKI5a', 3, '2024-12-29 04:52:22', 100002),
-(81, 'Ahza', '', '', 'super@gmail.com', '$2y$10$470tdwuxusQDuo1AmsLW1.ocetuvRtroanzMuKPylfgw01ZI0/RMu', 2, '2024-12-29 04:53:08', 100005),
-(89, 'saad', '', '', 'baker2@gmail.com', '$2y$10$uH60TCa2dlXCimxe99yO3.NL4ghDDSLfct/r3m4Df/Xe38fcNnJbO', 3, '2025-01-11 21:06:26', 100004),
-(91, 'hafizuddin', '', '', 'baker4@gmail.com', '$2y$10$.vRYn4V147JRHVpGolnGoe9BDX4.q6TPXuCzew3VVrCDX7JyBmRDe', 3, '2025-01-13 16:31:38', 100003),
-(94, 'najib', '', '', 'baker3@gmail.com', '$2y$10$q8MccWhTNmjGdgbAYYY.tey472m4jgE.QDZzB2BmRCuUZNaAx8DIi', 3, '2025-01-13 17:04:44', 100001);
+(80, 'Halim', '', '', 'baker1@gmail.com', '$2y$10$470tdwuxusQDuo1AmsLW1.ocetuvRtroanzMuKPylfgw01ZI0/RMu', 3, '2024-12-29 04:52:22', 100002),
+(81, 'Daniel Haikal', '', '', 'super@gmail.com', '$2y$10$RkZjDGNXOQuz0rAq0LTMduQR.ldvHTJ4iQQqUR9qbZVAhi3qP8Eq2', 2, '2024-12-29 04:53:08', 100005),
+(91, 'hafizuddin', '', '', 'baker4@gmail.com', '$2y$10$m3XmJTo8aFsU30cWzB5NdetVuu139nijNmabx9d50m79SqO3xErOe', 3, '2025-01-13 16:31:38', 100003);
 
 --
 -- Indexes for dumped tables
@@ -627,7 +655,7 @@ ALTER TABLE `answers`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=209;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
 
 --
 -- AUTO_INCREMENT for table `contact`
